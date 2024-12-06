@@ -73,9 +73,7 @@
                     <textarea name="message" placeholder="Tu mensaje" class="form-control" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
-                @if(session('success'))
-                <div class="alert alert-success">{{ session('success') }}</div>
-              
+               
             </form>
         </section>
     </main>
