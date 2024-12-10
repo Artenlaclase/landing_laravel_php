@@ -28,13 +28,13 @@
             <h2 class="text-center">Galería de trabajos</h2>
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <img src="https://via.placeholder.com/300" alt="Trabajo 1" class="img-fluid">
+                    <img src="/img/cine_escolar (1).jpg" alt="cine escolar" class="img-fluid">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <img src="https://via.placeholder.com/300" alt="Trabajo 2" class="img-fluid">
+                    <img src="/img/escultura_geometrica1.jpg" alt="Artes visuales" class="img-fluid">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <img src="https://via.placeholder.com/300" alt="Trabajo 3" class="img-fluid">
+                    <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo 3" class="img-fluid">
                 </div>
             </div>
         </section>
