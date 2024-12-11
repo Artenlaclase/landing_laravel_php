@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raúl Rosales R. - Artes Visuales</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -16,13 +17,23 @@
 
     <main class="container my-5">
         <!-- Descripción -->
-        <section id="about" class="text-center mb-5">
-            <h2>Sobre mí</h2>
-            <p>
-                Soy Raúl Rosales R., profesor de Artes Visuales con amplia experiencia en enseñar técnicas de pintura, dibujo y diseño gráfico.
-            </p>
-        </section>
-
+      <section id="about" class="mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Imagen en el lado izquierdo -->
+            <div class="col-md-4 mb-3">
+                <img src="{{ asset('img/about-me.jpg') }}" alt="Sobre mí" class="img-fluid rounded">
+            </div>
+            <!-- Texto en el lado derecho -->
+            <div class="col-md-8 text-center">
+                <h2>Sobre mí</h2>
+                <p>
+                    Soy especialista en Educación Artística con 18 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- Galería -->
         <section id="gallery" class="mb-5">
             <h2 class="text-center">Galería de trabajos</h2>
@@ -73,7 +84,7 @@
                     <textarea name="message" placeholder="Tu mensaje" class="form-control" rows="5" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
-               
+
             </form>
         </section>
     </main>
