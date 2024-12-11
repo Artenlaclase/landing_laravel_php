@@ -17,35 +17,51 @@
 
     <main class="container my-5">
         <!-- Descripción -->
-      <section id="about" class="mb-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <!-- Imagen en el lado izquierdo -->
-            <div class="col-md-4 mb-3">
-                <img src="{{ asset('img/about-me.jpg') }}" alt="Sobre mí" class="img-fluid rounded">
+        <section id="about" class="mb-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Imagen en el lado izquierdo -->
+                    <div class="col-md-4 mb-3">
+                        <img src="{{ asset('img/about-me.jpg') }}" alt="Sobre mí" class="img-fluid rounded">
+                    </div>
+                    <!-- Texto en el lado derecho -->
+                    <div class="col-md-8 text-center">
+                        <h2>Sobre mí</h2>
+                        <p>
+                            Soy especialista en Educación Artística con 18 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <!-- Texto en el lado derecho -->
-            <div class="col-md-8 text-center">
-                <h2>Sobre mí</h2>
-                <p>
-                    Soy especialista en Educación Artística con 18 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
         <!-- Galería -->
         <section id="gallery" class="mb-5">
-            <h2 class="text-center">Galería de trabajos</h2>
+            <!-- Título con más espacio -->
+            <h2 class="text-center my-5">Galería de trabajos</h2>
+
             <div class="row">
-                <div class="col-md-4 mb-3">
-                    <img src="/img/cine_escolar (1).jpg" alt="cine escolar" class="img-fluid">
+                <!-- Primera imagen con texto debajo -->
+                <div class="col-md-4 mb-4 text-center">
+
+                    <img src="/img/cine_escolar (1).jpg" alt="Cine escolar" class="img-fluid">
+
+                    <p class="mt-2">Cine escolar</p>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <img src="/img/escultura_geometrica1.jpg" alt="Artes visuales" class="img-fluid">
+
+                <!-- Segunda imagen con texto debajo -->
+                <div class="col-md-4 mb-4 text-center">
+
+                    <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid">
+
+                    <p class="mt-2">Escultura geométrica</p>
                 </div>
-                <div class="col-md-4 mb-3">
-                    <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo 3" class="img-fluid">
+
+                <!-- Tercera imagen con texto debajo -->
+                <div class="col-md-4 mb-4 text-center">
+
+                    <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
+
+                    <p class="mt-2">Trabajo en equipo</p>
                 </div>
             </div>
         </section>
