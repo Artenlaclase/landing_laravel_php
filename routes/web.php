@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
-
-
+use App\Http\Controllers\GalleryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +18,7 @@ Route::get('/', function () {
     return view('landing');
 });
 Route::post('/contact', [ContactController::class, 'store']);
+
+Route::get('/gallery/cine', [GalleryController::class, 'cine'])->name('gallery.cine');
+Route::get('/gallery/escultura', [GalleryController::class, 'escultura'])->name('gallery.escultura');
+Route::get('/gallery/trabajo', [GalleryController::class, 'trabajo'])->name('gallery.trabajo');
