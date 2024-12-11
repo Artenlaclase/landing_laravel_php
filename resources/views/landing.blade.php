@@ -43,25 +43,29 @@
                 <!-- Primera imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
 
-                    <img src="/img/cine_escolar (1).jpg" alt="Cine escolar" class="img-fluid">
+                    <a href="{{ route('gallery.cine') }}">
+                        <img src="/img/cine_escolar (1).jpg" alt="Cine escolar" class="img-fluid">
 
-                    <p class="mt-2">Cine escolar</p>
+                        <p class="mt-2">Cine escolar</p>
+                    </a>
                 </div>
 
                 <!-- Segunda imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
+                    <a href="{{ route('gallery.actividades') }}">
+                        <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid">
 
-                    <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid">
-
-                    <p class="mt-2">Escultura geométrica</p>
+                        <p class="mt-2">Actividades Didácticas </p>
+                    </a>
                 </div>
 
                 <!-- Tercera imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
-
+                <a href="{{ route('gallery.trabajo') }}">
                     <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
 
                     <p class="mt-2">Trabajo en equipo</p>
+                </a>
                 </div>
             </div>
         </section>
