@@ -32,7 +32,7 @@
                             <a class="nav-link" href="{{ route('gallery.trabajo') }}">Trabajo en Equipo</a>
                         </li>
                     </ul>
-                
+
                 </div>
             </div>
         </nav>
@@ -45,6 +45,9 @@
     <footer class="bg-dark text-white text-center py-3">
         <p>© 2024 Proyecto Artes Visuales</p>
     </footer>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
