@@ -15,7 +15,7 @@ class GalleryController extends Controller
     public function escultura()
     {
         // Retorna la vista para la página de "Escultura Geométrica"
-        return view('gallery.escultura');
+        return view('gallery.actividades');
     }
 
     public function trabajo()

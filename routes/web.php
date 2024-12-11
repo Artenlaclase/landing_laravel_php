@@ -20,5 +20,5 @@ Route::get('/', function () {
 Route::post('/contact', [ContactController::class, 'store']);
 
 Route::get('/gallery/cine', [GalleryController::class, 'cine'])->name('gallery.cine');
-Route::get('/gallery/escultura', [GalleryController::class, 'escultura'])->name('gallery.escultura');
+Route::get('/gallery/actividaes', [GalleryController::class, 'escultura'])->name('gallery.actividades');
 Route::get('/gallery/trabajo', [GalleryController::class, 'trabajo'])->name('gallery.trabajo');

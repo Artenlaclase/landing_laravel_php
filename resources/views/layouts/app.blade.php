@@ -11,7 +11,7 @@
         <nav>
             <a href="{{ url('/') }}">Inicio</a>
             <a href="{{ route('gallery.cine') }}">Cine Escolar</a>
-            <a href="{{ route('gallery.escultura') }}">Escultura</a>
+            <a href="{{ route('gallery.actividades') }}">Actividades Didácticas</a>
             <a href="{{ route('gallery.trabajo') }}">Trabajo en Equipo</a>
         </nav>
     </header>
