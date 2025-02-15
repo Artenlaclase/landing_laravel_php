@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raúl Rosales R. - Artes Visuales</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
 </head>
 
@@ -13,19 +14,34 @@
     <header class="bg-dark text-white text-center py-5">
         <h1>Raúl Rosales R.</h1>
         <p>Profesor de Artes Visuales</p>
+        <!-- Redes Sociales -->
+        <div class="d-flex justify-content-center mt-3">
+            <a href="https://www.instagram.com/artenlaclase" target="_blank" class="text-white mx-3">
+                <i class="bi bi-instagram fs-4"></i>
+            </a>
+            <a href="https://www.facebook.com/artenlaclase" target="_blank" class="text-white mx-3">
+                <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a href="https://www.youtube.com/@artenlaclase" target="_blank" class="text-white mx-3">
+                <i class="bi bi-youtube fs-4"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/raulrosalesrebolledo/" target="_blank" class="text-white mx-3">
+                <i class="bi bi-linkedin fs-4"></i>
+            </a>
+        </div>
     </header>
 
     <main class="container my-5">
         <!-- Descripción -->
-        <section id="about" class="mb-5">
+        <section id="about" class="mb-5 min-vh-100 d-flex align-items-center">
             <div class="container">
                 <div class="row align-items-center">
                     <!-- Imagen en el lado izquierdo -->
-                    <div class="col-md-4 mb-3">
-                        <img src="{{ asset('img/about-me.jpg') }}" alt="Sobre mí" class="img-fluid rounded">
+                    <div class="col-md-4 mb-3 d-flex align-items-center">
+                        <img src="{{ asset('img/raulRosales.jpg') }}" alt="Raúl Rosales" class="img-fluid rounded h-100 object-fit-cover">
                     </div>
                     <!-- Texto en el lado derecho -->
-                    <div class="col-md-8 text-center">
+                    <div class="col-md-6 text-center">
                         <h2>Sobre mí</h2>
                         <p>
                             Soy especialista en Educación Artística con 18 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
@@ -61,11 +77,11 @@
 
                 <!-- Tercera imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
-                <a href="{{ route('gallery.trabajo') }}">
-                    <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
+                    <a href="{{ route('gallery.trabajo') }}">
+                        <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
 
-                    <p class="mt-2">Trabajo en equipo</p>
-                </a>
+                        <p class="mt-2">Trabajo en equipo</p>
+                    </a>
                 </div>
             </div>
         </section>
