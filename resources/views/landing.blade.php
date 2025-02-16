@@ -31,7 +31,7 @@
         </div>
     </header>
 
-    <main class="container my-5">
+    <main class="container my-5 ">
         <!-- Descripción -->
         <section id="about" class="mb-5 min-vh-100 d-flex align-items-center">
             <div class="container">
@@ -41,10 +41,10 @@
                         <img src="{{ asset('img/raulRosales.jpg') }}" alt="Raúl Rosales" class="img-fluid rounded h-100 object-fit-cover">
                     </div>
                     <!-- Texto en el lado derecho -->
-                    <div class="col-md-6 text-center">
+                    <div class="col-md-6 text-center mt-md-0 mt-4">
                         <h2>Sobre mí</h2>
                         <p>
-                            Soy especialista en Educación Artística con 18 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
+                            Soy especialista en Educación Artística con 19 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
                         </p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <a href="{{ route('gallery.actividades') }}">
                         <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid">
 
-                        <p class="mt-2">Actividades Didácticas </p>
+                        <p class="mt-2">Actividades didácticas: Educación Artística </p>
                     </a>
                 </div>
 
@@ -80,7 +80,7 @@
                     <a href="{{ route('gallery.trabajo') }}">
                         <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
 
-                        <p class="mt-2">Trabajo en equipo</p>
+                        <p class="mt-2">Planificación y Metodología</p>
                     </a>
                 </div>
             </div>
@@ -127,6 +127,20 @@
 
     <footer class="text-center py-3 bg-light">
         <p>&copy; 2024 Raúl Rosales R. - Todos los derechos reservados.</p>
+        <div class="d-flex justify-content-center mt-2">
+            <a href="https://www.instagram.com/artenlaclase" target="_blank" class="text-dark mx-2">
+                <i class="bi bi-instagram fs-4"></i>
+            </a>
+            <a href="https://www.facebook.com/artenlaclase" target="_blank" class="text-dark mx-2">
+                <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a href="https://www.youtube.com/@artenlaclase" target="_blank" class="text-dark mx-2">
+                <i class="bi bi-youtube fs-4"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/raulrosalesrebolledo/" target="_blank" class="text-dark mx-2">
+                <i class="bi bi-linkedin fs-4"></i>
+            </a>
+        </div>
     </footer>
 </body>
 

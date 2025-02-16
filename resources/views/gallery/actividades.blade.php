@@ -2,7 +2,7 @@
 
 @section('content')
 <section id="escultura" class="mb-5">
-    <h2 class="text-center my-5">Escultura Geométrica</h2>
+    <h2 class="text-center my-5">Actividades didácticas: Educación Artística</h2>
     <div class="container">
         <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid mb-4">
         <p>
