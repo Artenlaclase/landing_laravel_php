@@ -71,7 +71,7 @@
                     <a href="{{ route('gallery.actividades') }}">
                         <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid">
 
-                        <p class="mt-2">Actividades didácticas: Educación Artística </p>
+                        <p class="mt-2">Didáctica </p>
                     </a>
                 </div>
 
@@ -80,7 +80,7 @@
                     <a href="{{ route('gallery.trabajo') }}">
                         <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
 
-                        <p class="mt-2">Planificación y Metodología</p>
+                        <p class="mt-2">Gestión</p>
                     </a>
                 </div>
             </div>

@@ -28,10 +28,10 @@
                             <a class="nav-link" href="{{ route('gallery.cine') }}">Cine Escolar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('gallery.actividades') }}">Actividades Didácticas</a>
+                            <a class="nav-link" href="{{ route('gallery.actividades') }}">Didáctica</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('gallery.trabajo') }}">Trabajo en Equipo</a>
+                            <a class="nav-link" href="{{ route('gallery.trabajo') }}">Gestión</a>
                         </li>
                     </ul>
 
