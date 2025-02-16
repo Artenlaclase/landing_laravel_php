@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        // Valida los datos
+        // Validar los datos
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:contacts,email',
+            'message' => 'required|string',
         ]);
 
-        // Aquí puedes enviar el mensaje por correo o guardarlo en la base de datos
-        return back()->with('success', 'Mensaje enviado exitosamente.');
+        // Guardar en la base de datos
+        Contact::create($request->all());
+
+        // Retornar mensaje de éxito
+        return redirect()->back()->with('success', 'Mensaje enviado correctamente.');
     }
 }
