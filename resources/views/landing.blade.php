@@ -14,6 +14,17 @@
     <header class="bg-dark text-white text-center py-5">
         <h1>Raúl Rosales R.</h1>
         <p>Profesor de Artes Visuales</p>
+        <nav>
+            <ul class="list-unstyled d-flex justify-content-center mt-3">
+                <li class="mx-3">
+                    <a href="#gallery" class="text-white text-decoration-none">Portfolio</a>
+                </li>
+                <li class="mx-3">
+                    <a href="#contact" class="text-white text-decoration-none">Contáctame</a>
+                </li>
+            </ul>
+        </nav>
+
         <!-- Redes Sociales -->
         <div class="d-flex justify-content-center mt-3">
             <a href="https://www.instagram.com/artenlaclase" target="_blank" class="text-white mx-3">
