@@ -17,9 +17,12 @@ use App\Http\Controllers\GalleryController;
 Route::get('/', function () {
     return view('landing');
 });
-Route::post('/contact', [ContactController::class, 'store']);
+Route::get('/contact', function() {
+    return view('contact');  // Muestra la vista donde está el formulario
+});
 
+Route::post('/contact', [ContactController::class, 'store']);
+Route::get('/contact', [ContactController::class, 'showForm']);  // Mostrar formulario
 Route::get('/gallery/cine', [GalleryController::class, 'cine'])->name('gallery.cine');
 Route::get('/gallery/actividaes', [GalleryController::class, 'escultura'])->name('gallery.actividades');
 Route::get('/gallery/trabajo', [GalleryController::class, 'trabajo'])->name('gallery.trabajo');
-Route::post('/contact', [ContactController::class, 'store']);

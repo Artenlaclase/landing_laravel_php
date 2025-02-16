@@ -121,32 +121,48 @@
 
         <script>
             document.getElementById("contactForm").addEventListener("submit", function(e) {
-                e.preventDefault();
+                e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
-                let formData = new FormData(this);
-                let responseBox = document.getElementById("formResponse");
+                let formData = new FormData(this); // Recoger los datos del formulario
+                let responseBox = document.getElementById("formResponse"); // Elemento donde se muestra el mensaje de respuesta
 
+                // Limpiar el mensaje anterior
+                responseBox.classList.add("d-none");
+
+                // Realizar la solicitud Fetch para enviar los datos del formulario
+                submitForm(formData, responseBox);
+            });
+
+            function submitForm(formData, responseBox) {
                 fetch("/contact", {
                         method: "POST",
                         body: formData,
                         headers: {
-                            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+                            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value // Añadir token CSRF a las cabeceras
                         }
                     })
-                    .then(response => response.json())
+                    .then(response => {
+                        if (!response.ok) { // Verificar si la respuesta fue exitosa (status 2xx)
+                            throw new Error('Error en el servidor: ' + response.status); // Lanzar error si no es 2xx
+                        }
+                        return response.json(); // Convertir la respuesta a formato JSON
+                    })
                     .then(data => {
-                        responseBox.textContent = data.message;
-                        responseBox.className = "alert alert-success";
-                        responseBox.classList.remove("d-none");
-                        this.reset();
+                        handleResponse(data, responseBox); // Mostrar el mensaje de éxito
                     })
                     .catch(error => {
-                        console.error("Error:", error);
-                        responseBox.textContent = "Hubo un error al enviar el mensaje.";
-                        responseBox.className = "alert alert-danger";
-                        responseBox.classList.remove("d-none");
+                        console.error("Error:", error); // Imprimir el error en la consola
+                        handleResponse({
+                            message: "Hubo un error al enviar el mensaje. Detalles: " + error.message // Mostrar mensaje de error con detalles
+                        }, responseBox, true); // Mostrar mensaje de error
                     });
-            });
+            }
+
+            function handleResponse(data, responseBox, isError = false) {
+                responseBox.textContent = data.message; // Asignar el mensaje al contenedor
+                responseBox.className = `alert ${isError ? 'alert-danger' : 'alert-success'}`; // Determinar si es un error o éxito
+                responseBox.classList.remove("d-none"); // Mostrar el mensaje
+            }
         </script>
     </main>
 
