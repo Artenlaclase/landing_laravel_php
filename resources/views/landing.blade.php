@@ -123,6 +123,27 @@
 
             </form>
         </section>
+        <script>
+            document.querySelector("form").addEventListener("submit", function(e) {
+                e.preventDefault();
+                let formData = new FormData(this);
+
+                fetch("/contact", {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        document.querySelector("form").reset();
+                    })
+                    .catch(error => console.error("Error:", error));
+            });
+        </script>
+
     </main>
 
     <footer class="text-center py-3 bg-light">
