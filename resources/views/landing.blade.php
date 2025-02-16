@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Raúl Rosales R. - Artes Visuales</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
@@ -138,27 +139,28 @@
                         method: "POST",
                         body: formData,
                         headers: {
-                            "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value // Añadir token CSRF a las cabeceras
+                            "X-CSRF-TOKEN": document.head.querySelector('meta[name="csrf-token"]').content // Añadir token CSRF a las cabeceras
                         }
                     })
-                    .then(response => {
-                        if (!response.ok) { // Verificar si la respuesta fue exitosa (status 2xx)
-                            throw new Error('Error en el servidor: ' + response.status); // Lanzar error si no es 2xx
-                        }
-                        return response.json(); // Convertir la respuesta a formato JSON
-                    })
-                    .then(data => {
-                        handleResponse(data, responseBox); // Mostrar el mensaje de éxito
-                    })
-                    .catch(error => {
-                        console.error("Error:", error); // Imprimir el error en la consola
-                        handleResponse({
-                            message: "Hubo un error al enviar el mensaje. Detalles: " + error.message // Mostrar mensaje de error con detalles
-                        }, responseBox, true); // Mostrar mensaje de error
-                    });
+                    .then(handleResponse)
+                    .catch(error => handleResponse({
+                        message: `Hubo un error al enviar el mensaje. Detalles: ${error.message}`
+                    }, responseBox, true)); // Mostrar mensaje de error
             }
 
-            function handleResponse(data, responseBox, isError = false) {
+            function handleResponse(response, responseBox) {
+                if (!response.ok) { // Verificar si la respuesta fue exitosa (status 2xx)
+                    return response.json().then(data => {
+                        throw new Error(data.message || 'Error en el servidor');
+                    });
+                }
+
+                return response.json().then(data => {
+                    displayMessage(data, responseBox); // Mostrar el mensaje de éxito
+                });
+            }
+
+            function displayMessage(data, responseBox, isError = false) {
                 responseBox.textContent = data.message; // Asignar el mensaje al contenedor
                 responseBox.className = `alert ${isError ? 'alert-danger' : 'alert-success'}`; // Determinar si es un error o éxito
                 responseBox.classList.remove("d-none"); // Mostrar el mensaje
