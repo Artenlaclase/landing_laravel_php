@@ -7,7 +7,7 @@
     <title>@yield('title', 'Galería de Artes Visuales')</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
 
@@ -18,7 +18,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="{{ url('/') }}">Inicio</a>
+                <a class="navbar-brand" href="{{ url('/') }}">Raúl Rosales R.</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,9 +34,24 @@
                             <a class="nav-link" href="{{ route('gallery.trabajo') }}">Gestión</a>
                         </li>
                     </ul>
-
                 </div>
+                <div class="d-flex align-items-center">
+                    <a href="https://www.instagram.com/artenlaclase" class="text-light me-3" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/artenlaclase" class="text-light me-3" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@artenlaclase" class="text-light me-3" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/raulrosalesrebolledo/" class="text-light" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+
             </div>
+
         </nav>
     </header>
 
@@ -45,22 +60,22 @@
     </main>
 
     <footer class="bg-dark text-light text-center py-3">
-    <p>© 2024 Proyecto Artes Visuales</p>
-    <div class="d-flex justify-content-center mt-2">
-        <a href="https://www.instagram.com/artenlaclase" target="_blank" class="text-light mx-2">
-            <i class="bi bi-instagram fs-4"></i>
-        </a>
-        <a href="https://www.facebook.com/artenlaclase" target="_blank" class="text-light mx-2">
-            <i class="bi bi-facebook fs-4"></i>
-        </a>
-        <a href="https://www.youtube.com/@artenlaclase" target="_blank" class="text-light mx-2">
-            <i class="bi bi-youtube fs-4"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/raulrosalesrebolledo/" target="_blank" class="text-light mx-2">
-            <i class="bi bi-linkedin fs-4"></i>
-        </a>
-    </div>
-</footer>
+        <p>© 2024 Proyecto Artes Visuales</p>
+        <div class="d-flex justify-content-center mt-2">
+            <a href="https://www.instagram.com/artenlaclase" target="_blank" class="text-light mx-2">
+                <i class="bi bi-instagram fs-4"></i>
+            </a>
+            <a href="https://www.facebook.com/artenlaclase" target="_blank" class="text-light mx-2">
+                <i class="bi bi-facebook fs-4"></i>
+            </a>
+            <a href="https://www.youtube.com/@artenlaclase" target="_blank" class="text-light mx-2">
+                <i class="bi bi-youtube fs-4"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/raulrosalesrebolledo/" target="_blank" class="text-light mx-2">
+                <i class="bi bi-linkedin fs-4"></i>
+            </a>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 

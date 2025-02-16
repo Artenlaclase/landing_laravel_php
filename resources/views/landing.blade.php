@@ -37,7 +37,7 @@
     <nav class="d-flex justify-content-center mt-3  fixed-top mt-0 pt-0">
         <ul class="list-unstyled d-flex">
             <li class="mx-3">
-                <a href="#about" class="btn btn-outline-secondary">Acerca de mi</a>
+                <a href="#about" class="btn btn-outline-secondary">Acerca de</a>
             </li>
             <li class="mx-3">
                 <a href="#gallery" class="btn btn-outline-secondary">Portfolio</a>
@@ -49,7 +49,7 @@
     </nav>
     <main class="container my-5 pt-1 mt-1">
         <!-- Descripción -->
-        <section id="about" class="mb-5 pt-0 mt-0 d-flex align-items-center">
+        <section id="about" class="text-center d-flex align-items-center justify-content-center" style="min-height: 80vh;">
             <div class="container">
                 <div class="row align-items-center">
                     <!-- Imagen en el lado izquierdo -->
@@ -67,105 +67,61 @@
             </div>
         </section>
         <!-- Galería -->
-        <section id="gallery" class="mb-5 min-vh-100 d-flex flex-column justify-content-center" style="background-color: #f8f9fa;">
-            <h2 class="text-center my-5">Portfolio</h2>
+        <section id="gallery" class="mb-5 min-vh-100 d-flex flex-column justify-content-center " style="background-color: #f8f9fa; ">
+            <h2 class="text-center my-5 ">Portfolio</h2>
 
             <div class="row">
                 <!-- Primera imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
-                    <a href="{{ route('gallery.cine') }}">
+                    <a href="{{ route('gallery.cine') }}" class="text-dark text-decoration-none">
                         <img src="/img/cine_escolar (1).jpg" alt="Cine escolar" class="img-fluid">
-                        <p class="mt-2">Cine escolar</p>
+                        <h3 class="mt-2">Cine escolar</h3>
                     </a>
                 </div>
 
                 <!-- Segunda imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
-                    <a href="{{ route('gallery.actividades') }}">
+                    <a href="{{ route('gallery.actividades') }}" class="text-dark text-decoration-none">
                         <img src="/img/escultura_geometrica1.jpg" alt="Escultura geométrica" class="img-fluid">
-                        <p class="mt-2">Didáctica </p>
+                        <h3 class="mt-2">Didáctica </h3>
                     </a>
                 </div>
 
                 <!-- Tercera imagen con texto debajo -->
                 <div class="col-md-4 mb-4 text-center">
-                    <a href="{{ route('gallery.trabajo') }}">
+                    <a href="{{ route('gallery.trabajo') }}" class="text-dark text-decoration-none">
                         <img src="/img/Trabajo_en_equipo.jpg" alt="Trabajo en equipo" class="img-fluid">
-                        <p class="mt-2">Gestión</p>
+                        <h3 class="mt-2">Gestión</h3>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Contacto -->
+        <!-- Contacto text-center d-flex align-items-center justify-content-center" style="min-height: 80vh; -->
         <section id="contact" class="text-center d-flex align-items-center justify-content-center" style="min-height: 80vh;">
-            <div class="container w-50">
-                <h2>Contáctame</h2>
-
-                <div id="formResponse" class="alert d-none" role="alert"></div>
-
-                <form id="contactForm" action="/contact" method="POST" class="mt-4">
-                    @csrf
-                    <div class="mb-3">
-                        <input type="text" name="name" placeholder="Tu nombre" class="form-control" required>
+            <div class="container px-4 px-md-6">
+                <div class="d-flex flex-column align-items-center text-center">
+                    <div class="mb-4">
+                        <h2 class="fw-bold display-5">Contáctame</h2>
+                        <p class="mx-auto text-muted fs-5" style="max-width: 700px;">
+                            Ponte en contacto conmigo para más información sobre clases y talleres.
+                        </p>
                     </div>
-                    <div class="mb-3">
-                        <input type="email" name="email" placeholder="Tu correo" class="form-control" required>
+                    <div class="w-100" style="max-width: 400px;">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-envelope fs-5 me-2"></i>
+                            <span>profesor@email.com</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-telephone fs-5 me-2"></i>
+                            <span>+34 123 456 789</span>
+                        </div>
+                        <a href="mailto:profesor@email.com" class="btn btn-primary w-100">Solicitar información</a>
                     </div>
-                    <div class="mb-3">
-                        <textarea name="message" placeholder="Tu mensaje" class="form-control" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
-                </form>
+                </div>
             </div>
         </section>
 
-        <script>
-            document.getElementById("contactForm").addEventListener("submit", function(e) {
-                e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
-
-                let formData = new FormData(this); // Recoger los datos del formulario
-                let responseBox = document.getElementById("formResponse"); // Elemento donde se muestra el mensaje de respuesta
-
-                // Limpiar el mensaje anterior
-                responseBox.classList.add("d-none");
-
-                // Realizar la solicitud Fetch para enviar los datos del formulario
-                submitForm(formData, responseBox);
-            });
-
-            function submitForm(formData, responseBox) {
-                fetch("/contact", {
-                        method: "POST",
-                        body: formData,
-                        headers: {
-                            "X-CSRF-TOKEN": document.head.querySelector('meta[name="csrf-token"]').content // Añadir token CSRF a las cabeceras
-                        }
-                    })
-                    .then(handleResponse)
-                    .catch(error => handleResponse({
-                        message: `Hubo un error al enviar el mensaje. Detalles: ${error.message}`
-                    }, responseBox, true)); // Mostrar mensaje de error
-            }
-
-            function handleResponse(response, responseBox) {
-                if (!response.ok) { // Verificar si la respuesta fue exitosa (status 2xx)
-                    return response.json().then(data => {
-                        throw new Error(data.message || 'Error en el servidor');
-                    });
-                }
-
-                return response.json().then(data => {
-                    displayMessage(data, responseBox); // Mostrar el mensaje de éxito
-                });
-            }
-
-            function displayMessage(data, responseBox, isError = false) {
-                responseBox.textContent = data.message; // Asignar el mensaje al contenedor
-                responseBox.className = `alert ${isError ? 'alert-danger' : 'alert-success'}`; // Determinar si es un error o éxito
-                responseBox.classList.remove("d-none"); // Mostrar el mensaje
-            }
-        </script>
     </main>
 
     <footer class="text-center py-3 bg-light mt-auto">
