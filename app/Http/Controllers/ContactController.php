@@ -20,6 +20,6 @@ class ContactController extends Controller
         Contact::create($request->all());
 
         // Retornar mensaje de éxito
-        return redirect()->back()->with('success', 'Mensaje enviado correctamente.');
+        return response()->json(['success' => 'Mensaje enviado correctamente.']);
     }
 }

@@ -41,7 +41,7 @@
                         <img src="{{ asset('img/raulRosales.jpg') }}" alt="Raúl Rosales" class="img-fluid rounded h-100 object-fit-cover">
                     </div>
                     <!-- Texto en el lado derecho -->
-                    <div class="col-md-6 text-center mt-md-0 mt-4">
+                    <div class="col-md-6 text-center mt-md-0 mt-4 mt-lg-5">
                         <h2>Sobre mí</h2>
                         <p>
                             Soy especialista en Educación Artística con 19 años de experiencia en centros educativos, donde he diseñado e implementado asignaturas como Artes Visuales, Tecnología, y talleres de Audiovisual, Proyectos Tecnológicos y Programación. Además, cuento con experiencia como administrador y programador de sitios web para instituciones educativas, optimizando su funcionalidad y accesibilidad. Durante 3 años, fui responsable en colegios del proyecto Enlaces del Ministerio de Educación, donde configuré y administré laboratorios de computación, integrando tecnología educativa para mejorar la enseñanza y el aprendizaje.
@@ -53,7 +53,7 @@
         <!-- Galería -->
         <section id="gallery" class="mb-5">
             <!-- Título con más espacio -->
-            <h2 class="text-center my-5">Galería de trabajos</h2>
+            <h2 class="text-center my-5">Portfolio</h2>
 
             <div class="row">
                 <!-- Primera imagen con texto debajo -->
@@ -87,46 +87,34 @@
         </section>
 
         <!-- Contacto -->
-        <section id="contact" class="text-center">
-            <h2>Contáctame</h2>
+        <section id="contact" class="text-center min-vh-100 d-flex align-items-center justify-content-center">
+            <div class="container w-50">
+                <h2>Contáctame</h2>
 
-            @if(session('success'))
-            <div class="alert alert-success w-50 mx-auto">
-                {{ session('success') }}
+                <div id="formResponse" class="alert d-none" role="alert"></div>
+
+                <form id="contactForm" action="/contact" method="POST" class="mt-4">
+                    @csrf
+                    <div class="mb-3">
+                        <input type="text" name="name" placeholder="Tu nombre" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" placeholder="Tu correo" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" placeholder="Tu mensaje" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Enviar</button>
+                </form>
             </div>
-            @endif
-
-            <!-- Errores de validación -->
-            @if($errors->any())
-            <div class="alert alert-danger w-50 mx-auto">
-                <ul class="mb-0">
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
-
-            <!-- Formulario -->
-            <form action="/contact" method="POST" class="w-50 mx-auto">
-                @csrf
-                <div class="mb-3">
-                    <input type="text" name="name" placeholder="Tu nombre" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <input type="email" name="email" placeholder="Tu correo" class="form-control" required>
-                </div>
-                <div class="mb-3">
-                    <textarea name="message" placeholder="Tu mensaje" class="form-control" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
-
-            </form>
         </section>
+
         <script>
-            document.querySelector("form").addEventListener("submit", function(e) {
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
                 e.preventDefault();
+
                 let formData = new FormData(this);
+                let responseBox = document.getElementById("formResponse");
 
                 fetch("/contact", {
                         method: "POST",
@@ -137,13 +125,19 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        alert(data.message);
-                        document.querySelector("form").reset();
+                        responseBox.textContent = data.message;
+                        responseBox.className = "alert alert-success";
+                        responseBox.classList.remove("d-none");
+                        this.reset();
                     })
-                    .catch(error => console.error("Error:", error));
+                    .catch(error => {
+                        console.error("Error:", error);
+                        responseBox.textContent = "Hubo un error al enviar el mensaje.";
+                        responseBox.className = "alert alert-danger";
+                        responseBox.classList.remove("d-none");
+                    });
             });
         </script>
-
     </main>
 
     <footer class="text-center py-3 bg-light">
